@@ -14,8 +14,8 @@ body {
 
 .hero {
   position: relative;
-  height: 500px;
-  overflow: hidden;
+  height: 224px;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,24 +23,152 @@ body {
 
 .bg-text {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0;
 }
 
+/* center horizontally */
+.bg-text1,
+.bg-text2,
+.bg-text3 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* adjust vertical spacing */
+.bg-text1 { top: 0px; }
+.bg-text2 { top: 90px; }  
+.bg-text3 { top: 190px; }
+
 .bg-text div {
-  font-size: 90px;
+  font-size: 100px;   
   font-weight: 700;
-  color: #6f86c9;
-  opacity: 0.25;
-  line-height: 0.8;
-  text-align: center;
+  color: #d3daf3;
+  line-height: 0.5;
   letter-spacing: 5px;
 }
 
-.home {
+.title {
   position: relative;
-  font-size: 60px;
-  color: #6f86c9;
+  z-index: 2;
+  font-size: 70px;
+  color: #7a94e1;
   margin: 0;
+  background: #efefef;   /* same as body background */
+  padding: 46px 30px 35px;  
+}
+
+.letter-link {
+  color: inherit;          /* same color as rest of word */
+  text-decoration: none;   /* remove underline */
+  transition: color 0.3s ease;
+}
+
+.letter-link:hover {
+  color: #f79aab;          /* hover color */
+}
+
+.letter-label1,
+.letter-label2,
+.letter-label3,
+.letter-label4 {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 16px;
+  letter-spacing: normal;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.letter-label1{
+  top: 140%;
+  left: 17.5%;
+}
+
+.letter-label2{
+  top: 140%;
+  left: 41.5%;
+}
+
+.letter-label3{
+  top: 140%;
+  left: 64%;
+}
+
+.letter-label4{
+  top: 140%;
+  left: 84%;
+}
+
+.letter-link:hover .letter-label1 {
+  opacity: 1;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.letter-link:hover .letter-label2 {
+  opacity: 1;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.letter-link:hover .letter-label3 {
+  opacity: 1;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.letter-link:hover .letter-label4 {
+  opacity: 1;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.diagonal-container {
+  position: relative;
+  width: 500px;  
+  height: 400px;
+  margin-left: 40px;
+}
+
+/* both layers fill the container */
+.top,
+.bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.top {
+  background-image: url("../images/diva.jpg");
+  background-size: cover;
+  clip-path: polygon(0 0,100% 0,100%,0 100%);
+  border-radius: 10px;
+}
+.bottom {
+  background-image: url("../images/eggva.JPG");
+  background-size: cover;
+  clip-path: polygon(0 100%,100% 0,100% 100%,0 100%);
+  border-radius: 10px;
+}
+
+.border {
+  width: 100%;
+  height: 120px;
+  margin: 40px auto;
+  background: #ecb3be;  
+  mask: 
+    linear-gradient(0,#0000 60px,#000 0) 0 30px,
+    radial-gradient(30px,#000 calc(100% - 1px),#0000) 50%/53px 60px repeat space;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.intro {
+  margin: 40px;
+  padding: 30px;
+  background-color: #d3daf3;
 }
