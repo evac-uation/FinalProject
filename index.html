@@ -23,24 +23,62 @@
   <br>
   <br>
 
-  <div class="border"></div>
+  <div class="border">
+    <p style="padding-top: 47px; letter-spacing: 2px;">click the darker letters to go somewhere interesting...</p>
+  </div>
 
   <br>
   <br>
 
 <div class="flex-container">
-  <div class="diagonal-container">
+  <div class="diagonal-container" id="spawnBox">
     <div class="top"></div>
     <div class="bottom"></div>
   </div>
   <div class="intro">
-    <h1>Hello</h1>
+    <h2>hello, my name is eva</h2>
+    <p>this website is a personal portfolio. it showcases my art, photos, writing, and projects! please feel free to explore.</p>
+    <p>try clicking one of the images...</p>
+    <div class="wave" id="text">this website is like fish... it swims this website is like fish... it swims this website is like fish... it swims this website is like fish... it swims this website is like fish... it swims this website is like fish... it swims this website is like fish... </div>
   </div>
 </div>
 
 
   <br>
   <br>
+
+  <script>
+    const el = document.getElementById("text");
+    el.innerHTML = el.textContent
+      .split("")
+      .map((letter, i) =>
+        `<span style="animation-delay:${i*0.05}s">${letter}</span>`
+      ).join("");
+
+    const spawnBox = document.getElementById("spawnBox");
+
+    spawnBox.addEventListener("click", () => {
+
+      const fish = document.createElement("img");
+      fish.src = "images/fish.png";
+      fish.className = "fish";
+
+      // random position within viewport
+      const x = Math.random() * (window.innerWidth - 80);
+      const y = Math.random() * (window.innerHeight - 80);
+
+      fish.style.left = x + "px";
+      fish.style.top = y + "px";
+
+      // click fish to remove
+      fish.addEventListener("click", () => {
+        fish.remove();
+      });
+
+      document.body.appendChild(fish);
+
+    });
+  </script>
 
 </body>
 </html>

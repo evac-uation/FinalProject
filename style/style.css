@@ -60,7 +60,7 @@ body {
 }
 
 .letter-link {
-  color: inherit;          /* same color as rest of word */
+  color: #bfccf9;          /* same color as rest of word */
   text-decoration: none;   /* remove underline */
   transition: color 0.3s ease;
 }
@@ -126,8 +126,10 @@ body {
 .diagonal-container {
   position: relative;
   width: 500px;  
-  height: 400px;
+  height: 500px;
   margin-left: 40px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 /* both layers fill the container */
@@ -139,17 +141,23 @@ body {
   width: 100%;
   height: 100%;
 }
+
 .top {
-  background-image: url("../images/diva.jpg");
+  background-image: url("../images/clouds.jpg");
   background-size: cover;
-  clip-path: polygon(0 0,100% 0,100%,0 100%);
+  clip-path: polygon(0 0,100% 0,0 100%);
   border-radius: 10px;
 }
+
 .bottom {
-  background-image: url("../images/eggva.JPG");
+  background-image: url("../images/silly.JPG");
   background-size: cover;
   clip-path: polygon(0 100%,100% 0,100% 100%,0 100%);
   border-radius: 10px;
+}
+
+.diagonal-container :hover{
+  transform: scale(1.05);
 }
 
 .border {
@@ -157,6 +165,9 @@ body {
   height: 120px;
   margin: 40px auto;
   background: #ecb3be;  
+  color:white;
+  text-align: center;
+  font-family: Helvetica; 
   mask: 
     linear-gradient(0,#0000 60px,#000 0) 0 30px,
     radial-gradient(30px,#000 calc(100% - 1px),#0000) 50%/53px 60px repeat space;
@@ -170,5 +181,31 @@ body {
 .intro {
   margin: 40px;
   padding: 30px;
-  background-color: #d3daf3;
+  background-color: #a7bbde;
+  color: white;
+  border-radius: 20px;
+  font-family: Helvetica;
+  max-width: 650px;
+}
+
+.wave span {
+  display: inline-block;
+  animation: jump 1s ease-in-out infinite;
+  color: white;
+  font-family: Helvetica;
+  letter-spacing: 5px;
+  line-height: 80px;
+}
+
+@keyframes jump {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+}
+
+/* fish style */
+.fish {
+  position: absolute;
+  width: 80px;
+  cursor: pointer;
+  user-select: none;
 }
