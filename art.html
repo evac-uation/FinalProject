@@ -6,6 +6,20 @@
     <title>Art</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://use.typekit.net/lar1tts.css">
+
+  <style>
+    img {
+      border-radius: 10px;
+      transition: ease;
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    img:hover {
+      box-shadow: 0 10px 20px #7a94e1;
+    }
+  </style>
+
+
 </head>
 
 
@@ -14,13 +28,138 @@
     <div class="bg-text div">
       <div class="bg-text1">PORTFOLIO</div>
       <div class="bg-text2"> </div>
-      <div class="bg-text3">P<a href="index.html" class="letter-link">O<span class="letter-label1">home</span></a>R<a href="blog.html" class="letter-link">T<span class="letter-label2">blog</span></a>F<a href="photos.html" class="letter-link">O<span class="letter-label3">photos</span></a>L<a href="web.html" class="letter-link">I<span class="letter-label4">web</span></a>O
+      <div class="bg-text3">P<a href="index.html" class="letter-link">O<span class="letter-label1">home</span></a>R<a href="blog.html" class="letter-link">T<span class="letter-label2">blog</span></a>F<a href="contact.html" class="letter-link">O<span class="letter-label3">contact</span></a>L<a href="web.html" class="letter-link">I<span class="letter-label4">web</span></a>O
       </div>
     </div>
     <h1 class="title">art</h1>
   </div>
-  
-<script src="js/script.js"></script>
+
+  <br>
+  <br>
+
+  <div class="border">
+    <p style="padding-top: 47px; letter-spacing: 2px;">welcome to my personal art gallery!</p>
+  </div>
+
+  <br>
+
+<div style="font-family: Helvetica;">
+
+  <div id="myBtnContainer" style="margin-left: 75px;">
+    <button class="btn active" onclick="filterSelection('all')">all</button>
+    <button class="btn" onclick="filterSelection('color')">color</button>
+    <button class="btn" onclick="filterSelection('ink')">ink</button>
+    <button class="btn" onclick="filterSelection('digital')">digital</button>
+  </div>
+
+  <div class="row" style="margin: 75px;">
+    <div class="column color">
+      <div>
+        <img src="images/landscape.jpeg" alt="Landscape painting" style="width:100%">
+      </div>
+    </div>
+    <div class="column color">
+      <div>
+        <img src="images/portrait.jpeg" alt="Portrait of a lady" style="width:100%">
+      </div>
+    </div>
+    <div class="column color">
+      <div>
+        <img src="images/tree.jpeg" alt="Tree painting" style="width:100%">
+      </div>
+    </div>
+    <div class="column color">
+      <div>
+        <img src="images/bellpepper.jpeg" alt="Barfing bellpepper" style="width:100%">
+      </div>
+    </div>
+
+    <div class="column ink">
+      <div>
+        <img src="images/flowers.jpeg" alt="Two flowers with faces" style="width:100%">
+      </div>
+    </div>
+    <div class="column ink">
+      <div>
+        <img src="images/plants.jpeg" alt="Plant sketches" style="width:100%">
+      </div>
+    </div>
+    <div class="column ink">
+      <div>
+        <img src="images/hands.jpeg" alt="Hand sketches" style="width:100%">
+      </div>
+    </div>
+
+    <div class="column digital">
+      <div>
+        <img src="images/digital1.JPG" alt="Self portrait" style="width:100%">
+      </div>
+    </div>
+    <div class="column digital">
+      <div>
+        <img src="images/sleep.PNG" alt="Fairy sleeping" style="width:100%">
+      </div>
+    </div>
+    <div class="column digital">
+      <div>
+        <img src="images/ebc26.PNG" alt="EBC 2026 sticker design" style="width:100%">
+      </div>
+    </div>
+  <!-- END GRID -->
+  </div>
+</div>
+
+  <script>
+
+    filterSelection("all") // Execute the function and show all columns
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("column");
+      if (c == "all") c = "";
+      // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+
+    // Show filtered elements
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+          element.className += " " + arr2[i];
+        }
+      }
+    }
+
+    // Hide elements that are not selected
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+
+  </script>
 
 </body>
 </html>

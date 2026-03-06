@@ -8,19 +8,137 @@
     <link rel="stylesheet" href="https://use.typekit.net/lar1tts.css">
 </head>
 
-
 <body>
   <div class="hero fedreg">
     <div class="bg-text div">
       <div class="bg-text1">PORTFOLIO</div>
       <div class="bg-text2"> </div>
-      <div class="bg-text3">P<a href="art.html" class="letter-link">O<span class="letter-label1">art</span></a>R<a href="index.html" class="letter-link">T<span class="letter-label2">home</span></a>F<a href="photos.html" class="letter-link">O<span class="letter-label3">photos</span></a>L<a href="web.html" class="letter-link">I<span class="letter-label4">web</span></a>O
+      <div class="bg-text3">P<a href="art.html" class="letter-link">O<span class="letter-label1">art</span></a>R<a href="index.html" class="letter-link">T<span class="letter-label2">home</span></a>F<a href="contact.html" class="letter-link">O<span class="letter-label3">contact</span></a>L<a href="web.html" class="letter-link">I<span class="letter-label4">web</span></a>O
       </div>
     </div>
     <h1 class="title">blog</h1>
   </div>
   
-<script src="js/script.js"></script>
+  <br>
+  <br>
+  
+  <div class="border">
+    <p style="padding-top: 47px; letter-spacing: 2px;">welcome to my blog! i charge 1 penny per thought.</p>
+  </div>
+
+  <br>
+  <br>
+
+<div class="scroll-container">
+
+  <div class="blog-card" data-blog="blog1">
+    <h3>Monday</h3>
+    <p>Monday is the first day of the week...</p>
+  </div>
+
+  <div class="blog-card" data-blog="blog2">
+    <h3>Tuesday</h3>
+    <p>Tuesdays are green to me...</p>
+  </div>
+
+  <div class="blog-card" data-blog="blog3">
+    <h3>Wednesday</h3>
+    <p>Time to start looking forward...</p>
+  </div>
+
+  <div class="blog-card" data-blog="blog4">
+    <h3>Thursday</h3>
+    <p>A comfortable day...</p>
+  </div>
+
+  <div class="blog-card" data-blog="blog5">
+    <h3>Friday</h3>
+    <p>Excitement for the weekend...</p>
+  </div>
+  
+  
+</div>
+
+<div id="myModal" class="modal">
+
+  <span class="close">&times;</span>
+
+  <div class="modal-content blog-content">
+
+    <div id="blog1" class="blog-entry">
+      <h2>Monday</h2>
+      <p>Monday is the first day of the week. It is the day after Sunday. This Monday, I dragged
+        myself out of bed at 8:00 am for school. I felt nervous for finals week, but also excited for
+        the feeling of accomplishment at the end. Many people hate mondays, but I don't think they should.
+        We should all appreciate the new week and have a positive attitude!
+      </p>
+    </div>
+
+    <div id="blog2" class="blog-entry">
+      <h2>Tuesday</h2>
+      <p>Tuesdays are green to me. Let me explain. I used to always have art class on Tuesdays while
+        in elementary school. After class ended, I would skip down to the library for art class with
+        my light green sketchbook in hand. Ever sense, I have always viewed Tuesday as a green day. I
+        spent this Tuesday in a hurry due to all A-H periods being packed into a day!
+      </p>
+    </div>
+
+    <div id="blog3" class="blog-entry">
+      <h2>Wednesday</h2>
+      <p>Time to start looking forward to the weekend! I mean, it's halfway already! Wednesday is a fun day
+        because I no longer think about what day it is. Monday and Tuesday, I think about how early in the 
+        week it is. Thursday and Friday, I'm close to the end! Wednesday is the most... average day of all days.
+        But doesn't that in itself make it unique?
+      </p>
+    </div>
+
+    <div id="blog4" class="blog-entry">
+      <h2>Thursday</h2>
+      <p>A comfortable day to nap after school! As soon as I hit my bed at 3:30, I'm ready to lose consciousness.
+        Then, I lounge about until dinner time. Then... I panic at the thought of starting my assignments at 7:00pm!
+        But who can blame me? It's Thursday, of course I'm tired. This thought process causes me to procrastinate
+        for at least another two hours... oh, well.
+      </p>
+    </div>
+
+    <div id="blog5" class="blog-entry">
+      <h2>Friday</h2>
+      <p>Excitement for the weekend!!! Friday is a day of false hopes and dreams. "I'm going to lock in this weekened for sure."
+        Falser words have never been spoken. This Friday, I need to study for the SAT... which I haven't started studying for... which 
+        is in a few days...
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+window.onload = function () {
+
+  const modal = document.getElementById("myModal");
+  const cards = document.querySelectorAll(".scroll-container .blog-card");
+  const blogs = document.querySelectorAll(".blog-entry");
+  const closeBtn = document.querySelector(".close");
+
+  cards.forEach(card => {
+    card.onclick = function () {
+
+      const blogId = this.dataset.blog;
+
+      blogs.forEach(b => b.style.display = "none");
+
+      document.getElementById(blogId).style.display = "block";
+
+      modal.style.display = "block";
+    }
+  });
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  }
+
+};
+</script>
 
 </body>
 </html>

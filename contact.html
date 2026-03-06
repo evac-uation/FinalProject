@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/lar1tts.css">
+</head>
+
+
+<body>
+  <div class="hero fedreg">
+    <div class="bg-text div">
+      <div class="bg-text1">PORTFOLIO</div>
+      <div class="bg-text2"> </div>
+      <div class="bg-text3">P<a href="art.html" class="letter-link">O<span class="letter-label1">art</span></a>R<a href="blog.html" class="letter-link">T<span class="letter-label2">blog</span></a>F<a href="index.html" class="letter-link">O<span class="letter-label3">home</span></a>L<a href="web.html" class="letter-link">I<span class="letter-label4">web</span></a>O
+      </div>
+    </div>
+    <h1 class="title">contact</h1>
+  </div>
+<br><br>
+  <div class="border">
+    <p style="padding-top: 47px; letter-spacing: 2px;">write me an email!</p>
+  </div>
+
+  
+<div class="contact-page">
+
+  <form class="contact-form" onsubmit="sendMail(); return false;">
+
+    <input id="name" type="text" placeholder="Your Name" required>
+
+    <input id="email" type="email" placeholder="Your Email" required>
+
+    <textarea id="message" placeholder="Write your message..." required></textarea>
+
+    <button type="submit">Send Message</button>
+
+  </form>
+
+</div>
+
+<script>
+  function sendMail(){
+
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  let mailLink =
+  "mailto:evchen@eastsideprep.org"
+  + "?subject=Message from " + encodeURIComponent(name)
+  + "&body="
+  + encodeURIComponent(
+  "Name: " + name + "\n"
+  + "Email: " + email + "\n\n"
+  + message
+  );
+
+  window.location.href = mailLink;
+
+  }
+</script>
+
+</body>
+</html>

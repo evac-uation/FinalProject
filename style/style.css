@@ -209,3 +209,300 @@ body {
   cursor: pointer;
   user-select: none;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide columns by default */
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #ffc5d0;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #7a94e1;
+}
+
+/* Add a grey background color on mouse-over */
+.btn:hover {
+  background-color: #d8a2ac;
+}
+
+/* Add a dark background color to the active button */
+.btn.active {
+  background-color: #7a94e1;
+   color: #ffc5d0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+.blog-card {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;   /* distributes text nicely */
+  
+  width: 400px;
+  height: 260px;
+
+  padding: 24px;
+  margin: 12px;
+
+  background: #ffc5d0;
+  border-radius: 12px;
+
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  overflow: hidden;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.blog-entry {
+  display: none;
+}
+
+.blog-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #7a94e1;
+  overflow: hidden;
+}
+
+.blog-card h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  color: #7a94e1;
+}
+
+.read {
+  font-size: 13px;
+  color: #7a94e1;
+}
+
+div.scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  width: 100vw;
+  scrollbar-width: thin;
+}
+
+div.scroll-container img {
+  padding: 10px;
+  width: 300px;
+  vertical-align: middle;
+}
+  
+.clickableImage {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease; 
+  margin: auto;
+}
+
+.clickableImage:hover {  opacity: 0.8;
+  transform: scale(0.9);}
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  padding: 30px;
+  margin: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); 
+  width: 80%; 
+  max-width: 900px;
+  height: auto;
+  background-color: #ffc5d0; 
+  border-radius: 15px;
+  color: #7a94e1;
+}
+
+.modal-content {
+  margin: 20px;
+  display: block;
+  width: auto; 
+  max-width: 60%;
+  max-height: 50%;
+  object-fit: contain;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #7a94e1;
+  padding: 10px 0;
+  height: 150px;
+  font-size:x-large;
+}
+
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #7a94e1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+.contact-page{
+  max-width:600px;
+  margin:40px auto;
+  text-align:center;
+}
+
+
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:14px;
+  border:1px solid #e8e8e8;
+  border-radius:10px;
+  font-size:16px;
+  font-family:inherit;
+}
+
+.contact-form textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.contact-form button{
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:#f3a9b7;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.contact-form button:hover{
+  opacity:0.8;
+  transform:translateY(-2px);
+}
+
+
+.web-portfolio {
+  max-width: 1500px;
+  margin: 80px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+.web-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.web-card {
+  background-color: #7a94e1;
+  width: 1500px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-family: Helvetica;
+  color: #ffc5d0;
+  padding: 10px;
+}
+
+.web-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.preview-frame {
+  width: 100%;
+  height: 300px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
